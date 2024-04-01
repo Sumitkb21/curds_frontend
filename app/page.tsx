@@ -70,14 +70,14 @@ export default function Home(){
    
     
     try {
-     const {data} = await axios.post("https://cruds-backend.onrender.com/api/v1/task/deleteEntry",{idd:idToDelete});
+     const {data} = await axios.post("https://cruds-backend1.onrender.com/api/v1/task/deleteEntry",{idd:idToDelete});
 
      
 
      toast.success("Deleted Succesfully",{duration:5000});
      console.log("deleted");
      setDone(true);
-    const response = await axios.get("https://cruds-backend.onrender.com/api/v1/task/getAllEntry", {
+    const response = await axios.get("https://cruds-backend1.onrender.com/api/v1/task/getAllEntry", {
       withCredentials: true,
     });
     setRows(response.data.entries);
@@ -99,7 +99,7 @@ export default function Home(){
 
   useEffect(() => {
       
-    axios.get("https://cruds-backend.onrender.com/api/v1/task/getAllEntry",{
+    axios.get("https://cruds-backend1.onrender.com/api/v1/task/getAllEntry",{
       withCredentials:true,
     })
     .then(res=>{
@@ -121,7 +121,7 @@ export default function Home(){
 const sendEntries = async () => {
   setLoader(true);
   try {
-    const response = await axios.post("https://cruds-backend.onrender.com/api/v1/task/sendEntry", { entries: checked });
+    const response = await axios.post("https://cruds-backend1.onrender.com/api/v1/task/sendEntry", { entries: checked });
     
     console.log("Email sent successfully");
     toast.success(response.data.message, { duration: 5000 });

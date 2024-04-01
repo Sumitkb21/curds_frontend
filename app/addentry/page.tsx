@@ -21,7 +21,7 @@ export default function Add(){
         e.preventDefault();
         
         try {
-         const {data} = await axios.post("https://cruds-backend.onrender.com/api/v1/task/creatEntry", 
+         const {data} = await axios.post("https://cruds-backend1.onrender.com/api/v1/task/creatEntry", 
           {
                name, 
                email,

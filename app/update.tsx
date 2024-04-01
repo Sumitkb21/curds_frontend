@@ -40,7 +40,7 @@ const [userid,setUserid] = useState(props.id);
         e.preventDefault();
         
         try {
-         const {data} = await axios.post("https://cruds-backend.onrender.com/api/v1/task/updateEntry", 
+         const {data} = await axios.post("https://cruds-backend1.onrender.com/api/v1/task/updateEntry", 
           { 
             username,
             useremail,
@@ -61,7 +61,7 @@ const [userid,setUserid] = useState(props.id);
 
          toast.success("updated",{duration:5000});
          console.log("done");
-         const response = await axios.get("https://cruds-backend.onrender.com/api/v1/task/getAllEntry", {
+         const response = await axios.get("https://cruds-backend1.onrender.com/api/v1/task/getAllEntry", {
           withCredentials: true,
         });
          props.setRows(response.data.entries);
